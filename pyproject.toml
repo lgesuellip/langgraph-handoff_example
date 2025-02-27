@@ -1,0 +1,44 @@
+[tool.poetry]
+name = "langgraph-swarm_example"
+version = "0.1.0"
+description = "Langgraph Swarm - Example"
+readme = "README.md"
+authors = ["Lautaro Gesuelli Pinto"]
+packages = [
+    {include = "evals"},
+    {include = "src"}
+]
+
+[tool.poetry.dependencies]
+python = ">=3.11, <4.0"
+langchain-openai = "^0.3.4"
+langchain-core = "^0.3.34"
+langchain-community = "^0.3.17"
+langgraph = "^0.2.70"
+python-dotenv = "^1.0.1"
+tenacity = "^9.0.0"
+langgraph_swarm = "^0.0.2"
+jinja2 = ">=3.1.2"
+beautifulsoup4 = ">=4.12.3"
+
+[tool.poetry.group.dev.dependencies]
+mypy = ">=1.11.1"
+ruff = ">=0.6.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+lint.select = [
+    "E",    # pycodestyle
+    "F",    # pyflakes
+    "I",    # isort
+    "D",    # pydocstyle
+]
+lint.ignore = [
+    "D417",  # Missing argument description in docstring
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
